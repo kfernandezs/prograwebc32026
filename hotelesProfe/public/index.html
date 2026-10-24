@@ -20,62 +20,7 @@
       <header>
         <!-- place navbar here -->
         <h1>Titulo de la paginas</h1>
-        <nav class="navbar navbar-expand-sm navbar-light bg-light">
-          <div class="container">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button
-              class="navbar-toggler d-lg-none"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapsibleNavId"
-              aria-controls="collapsibleNavId"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavId">
-              <form class="d-flex my-2 my-lg-0">
-                <input
-                  class="form-control me-sm-2"
-                  type="text"
-                  placeholder="Search"
-                />
-                <button
-                  class="btn btn-outline-success my-2 my-sm-0"
-                  type="submit"
-                >
-                  Search
-                </button>
-              </form>
-              <ul class="navbar-nav me-auto mt-2 mt-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link active" href="#" aria-current="page"
-                    >Home <span class="visually-hidden">(current)</span></a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    href="#"
-                    id="dropdownId"
-                    data-bs-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                    >Dropdown</a
-                  >
-                  <div class="dropdown-menu" aria-labelledby="dropdownId">
-                    <a class="dropdown-item" href="#">Action 1</a>
-                    <a class="dropdown-item" href="#">Action 2</a>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
+        <div id="menu"></div>
       </header>
       <main>
         <div class="container">
@@ -163,86 +108,6 @@
             <div class="container"></div>
             <div class="container"></div>
             <div class="container"></div>
-            <div class="container">
-              <nav class="navbar navbar-light bg-light fixed-top">
-                <div class="container-fluid">
-                  <a class="navbar-brand" href="#">Navbar</a>
-                  <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasNavbar"
-                    aria-controls="offcanvasNavbar"
-                  >
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div
-                    class="offcanvas offcanvas-end"
-                    tabindex="-1"
-                    id="offcanvasNavbar"
-                    aria-labelledby="offcanvasNavbarLabel"
-                  >
-                    <div class="offcanvas-header">
-                      <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
-                        Offcanvas
-                      </h5>
-                      <button
-                        type="button"
-                        class="btn-close text-reset"
-                        data-bs-dismiss="offcanvas"
-                        aria-label="Close"
-                      ></button>
-                    </div>
-                    <div class="offcanvas-body">
-                      <ul
-                        class="navbar-nav justify-content-end flex-grow-1 pe-3"
-                      >
-                        <li class="nav-item">
-                          <a
-                            class="nav-link active"
-                            aria-current="page"
-                            href="#"
-                            >Home</a
-                          >
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                          <a
-                            class="nav-link dropdown-toggle"
-                            href="#"
-                            id="dropdownId"
-                            data-bs-toggle="dropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                            >Dropdown</a
-                          >
-                          <div
-                            class="dropdown-menu"
-                            aria-labelledby="dropdownId"
-                          >
-                            <a class="dropdown-item" href="#">Action 1</a>
-                            <a class="dropdown-item" href="#">Action 2</a>
-                          </div>
-                        </li>
-                      </ul>
-                      <form class="d-flex">
-                        <input
-                          class="form-control me-2"
-                          type="search"
-                          placeholder="Search"
-                          aria-label="Search"
-                        />
-                        <button class="btn btn-outline-success" type="submit">
-                          Search
-                        </button>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              </nav>
-            </div>
 
             <div class="container">
               <!-- You can dismiss by clicking somewhere -->
@@ -366,13 +231,6 @@
                 ></button>
                 <strong>Alert Heading</strong> Alert Content
               </div>
-
-              <script>
-                var alertList = document.querySelectorAll(".alert");
-                alertList.forEach(function (alert) {
-                  new bootstrap.Alert(alert);
-                });
-              </script>
             </div>
 
             <div class="container"></div>
@@ -456,19 +314,6 @@
                     </div>
                   </div>
                 </div>
-
-                <script>
-                  var modalId = document.getElementById("modalId");
-
-                  modalId.addEventListener("show.bs.modal", function (event) {
-                    // Button that triggered the modal
-                    let button = event.relatedTarget;
-                    // Extract info from data-bs-* attributes
-                    let recipient = button.getAttribute("data-bs-whatever");
-
-                    // Use above variables to manipulate the DOM
-                  });
-                </script>
               </div>
             </div>
           </div>
@@ -563,12 +408,6 @@
               </div>
             </div>
           </div>
-
-          <script>
-            const toastEl = document.querySelector(".toast");
-            const toast = new bootstrap.Toast(toastEl);
-            toast.show();
-          </script>
 
           <button
             type="button"
@@ -711,19 +550,6 @@
               </div>
             </div>
           </div>
-
-          <script>
-            var modalId = document.getElementById("modalId");
-
-            modalId.addEventListener("show.bs.modal", function (event) {
-              // Button that triggered the modal
-              let button = event.relatedTarget;
-              // Extract info from data-bs-* attributes
-              let recipient = button.getAttribute("data-bs-whatever");
-
-              // Use above variables to manipulate the DOM
-            });
-          </script>
 
           <div class="table-responsive">
             <table
@@ -909,5 +735,6 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+    <script src="js/menu.js" defer></script>
   </body>
 </html>
