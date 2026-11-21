@@ -41,7 +41,6 @@ export async function actualizarDatos() {
     const hotel = {
         "correo": correo,
         "descripcion": descripcion,
-        "id": id,
         "nombre": nombre,
         "sitio_web": sitio_web,
         "telefono": telefono,
@@ -50,7 +49,9 @@ export async function actualizarDatos() {
 
     console.log(hotel);
 
-    const respuesta = await fetch(API.HOTEL,
+    const url = `${API.HOTEL}/${id}`
+    console.log(url);
+    const respuesta = await fetch(url,
         {
             method: "PUT",
             headers: {
@@ -217,7 +218,7 @@ function cargarInputsEditar(datos) {
     document.getElementById("descripcion").value = datos.descripcion;
     //  document.getElementById("estado").value = datos.estado;
     //  document.getElementById("fecha_creacion").value = datos.fecha_creacion;
-    document.getElementById("id").value = datos.id;
+    document.getElementById("id").value = datos._id;
     document.getElementById("nombre").value = datos.nombre;
     document.getElementById("sitio_web").value = datos.sitio_web;
     document.getElementById("telefono").value = datos.telefono;
@@ -236,7 +237,7 @@ function pintarTabla(datos) {
     datos.forEach(elementIndividuales => {
         tablaHotels.innerHTML += `
                 <tr class="">
-                    <td scope="row">${elementIndividuales.id}</td>
+                    <td scope="row">${elementIndividuales._id}</td>
                     <td>${elementIndividuales.nombre}</td>
                     <td>${elementIndividuales.descripcion}</td>
                     <td>${elementIndividuales.estado}</td>
@@ -251,7 +252,7 @@ function pintarTabla(datos) {
                             class="btn btn-success"
                             href="#"
                             role="button"
-                            onclick="mostrarEditar('${elementIndividuales.id}')"
+                            onclick="mostrarEditar('${elementIndividuales._id}')"
                             >Editar</a> || 
                                                         <a
                             name=""
@@ -259,7 +260,7 @@ function pintarTabla(datos) {
                             class="btn btn-danger"
                             href="#"
                             role="button"
-                             onclick="mostrarEliminar('${elementIndividuales.id}')"
+                             onclick="mostrarEliminar('${elementIndividuales._id}')"
                             >Eliminar</a> 
                    </td>                    
                 </tr>
