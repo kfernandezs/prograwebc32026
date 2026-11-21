@@ -68,7 +68,7 @@ router.post('/', async (req, res) => {
         res.status(201).json(
             {
 
-                message: "Usuario creado",
+                message: "Hotel creado",
                 data: guardarHotel
             });
 
@@ -83,7 +83,43 @@ router.post('/', async (req, res) => {
 
 });
 
+//Put como lo teniamos el hotel api
+router.put('/:id', async (req, res) => {
+    try {
 
+        const hotel = await Hotel.findByIdAndUpdate(
+            req.params.id,
+            req.body, {
+            new: true,
+            runValidators: true
+        }
+        );
+
+        if (!hotel) {
+            res.status(404).json({
+                message: "Hotel no encontrado" + req.params.id
+            })
+        }
+
+
+
+        res.status(202).json(
+            {
+
+                message: "Hotel Actualizado",
+                data: hotel
+            });
+
+
+    }
+    catch (error) {
+        res.status(500).json({
+            message: error.message
+        })
+    }
+
+
+});
 
 
 module.exports = router;
