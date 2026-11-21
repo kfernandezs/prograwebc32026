@@ -32,7 +32,7 @@ router.get('/:id', async (req, res) => {
 
         if (!hotel) {
             res.status(404).json({
-                message: "Usuario no encontrado" + req.params.id
+                message: "Hotel no encontrado: " + req.params.id
             })
         }
 
@@ -97,7 +97,7 @@ router.put('/:id', async (req, res) => {
 
         if (!hotel) {
             res.status(404).json({
-                message: "Hotel no encontrado" + req.params.id
+                message: "Hotel no encontrado: " + req.params.id
             })
         }
 
@@ -108,6 +108,37 @@ router.put('/:id', async (req, res) => {
 
                 message: "Hotel Actualizado",
                 data: hotel
+            });
+
+
+    }
+    catch (error) {
+        res.status(500).json({
+            message: error.message
+        })
+    }
+
+
+});
+
+
+//Delete por id como lo teniamos el hotel api
+router.delete('/:id', async (req, res) => {
+    try {
+        const hotel = await Hotel.findByIdAndDelete(req.params.id);
+
+        if (!hotel) {
+            res.status(404).json({
+                message: "Hotel no encontrado: " + req.params.id
+            })
+        }
+
+        res.json(
+
+            {
+                code: 203,
+                message: "Hotel Eliminado",
+                data: req.params.id
             });
 
 
