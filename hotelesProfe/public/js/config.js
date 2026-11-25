@@ -1,4 +1,10 @@
 //Export sirve para exporta variables y objetos
 export const API = {
-    HOTEL: "https://paginas-web-cr.com/Api/hotelApi/hotel/hotel.php"
+    HOTEL: "http://localhost:5004/hotel"
 };
+
+// export const API = {
+//     HOTEL: "https://paginas-web-cr.com/Api/hotelApi/hotel/hotel.php"
+// };
+
+//http://localhost:5004/hotel/
